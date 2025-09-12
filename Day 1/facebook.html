@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Login — Demo</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    :root {
+      --brand: #1877f2;  /* primary blue */
+      --brand-dark: #166fe5;
+      --bg: #f0f2f5;
+      --card: #fff;
+      --text: #1c1e21;
+      --muted: #606770;
+      --border: #dddfe2;
+      --success: #42b72a;
+      --focus: 2px solid #1877f2;
+      --radius: 12px;
+      --shadow: 0 6px 20px rgba(0,0,0,.1);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    /* Layout */
+    .page {
+      min-height: 100dvh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    header {
+      padding: 32px 16px 0;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+      gap: 32px;
+      margin: 40px 0;
+    }
+
+    .brand {
+      font-size: clamp(28px, 6vw, 56px);
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+    }
+    .tagline {
+      font-size: clamp(16px, 2.5vw, 24px);
+      color: var(--text);
+      opacity: .85;
+      margin: 0;
+    }
+
+    /* Card */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 16px 16px;
+      border: 1px solid rgba(0,0,0,.04);
+    }
+    .form {
+      display: grid;
+      gap: 12px;
+    }
+    label { font-size: 14px; color: var(--muted); }
+
+    .input {
+      width: 100%;
+      appearance: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 12px;
+      font-size: 16px;
+      background: #fff;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .input:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(24,119,242,.15);
+    }
+
+    .btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 17px;
+      transition: filter .15s ease;
+    }
+    .btn.primary { background: var(--brand); color: #fff; }
+    .btn.primary:hover { filter: brightness(.98); }
+    .btn.primary:active { filter: brightness(.95); }
+
+    .links {
+      text-align: center;
+      margin: 10px 0 12px;
+    }
+    .links a {
+      color: var(--brand);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .links a:hover { text-decoration: underline; }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 12px 0;
+    }
+
+    .btn-create {
+      background: var(--success);
+      color: #fff;
+      width: max-content;
+      margin: 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+    .btn-create:hover { filter: brightness(.98); }
+
+    .small-note {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 40px;
+      padding: 24px 0 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ⚠️ Demo page for education only. Do NOT use to capture real credentials or impersonate a brand. -->
+  <div class="page">
+    <header>
+      <div class="wrap">
+        <h1 class="brand" aria-label="Social login demo brand">socialbook</h1>
+        <p class="tagline">Connect with friends and the world around you — demo layout.</p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero" aria-label="Login area">
+        <div>
+          <h2 style="position:absolute;left:-9999px">Sign in</h2>
+          <div class="card" role="group" aria-labelledby="signin-title">
+            <form class="form" onsubmit="return false" novalidate>
+              <input class="input" type="email" inputmode="email" name="email" placeholder="Email address or phone number" aria-label="Email address or phone number" required>
+              <input class="input" type="password" name="password" placeholder="Password" aria-label="Password" required>
+              <button class="btn primary" type="button" aria-label="Log in">Log in</button>
+              <div class="links">
+                <a href="#" aria-label="Forgot password">Forgotten password?</a>
+              </div>
+              <div class="divider" role="separator" aria-hidden="true"></div>
+              <button class="btn btn-create" type="button">Create new account</button>
+              <p class="small-note">This is a static demo — no submissions are sent.</p>
+            </form>
+          </div>
+        </div>
+
+        <aside aria-label="Create a Page" style="align-self:center;">
+          <p style="margin:0; font-size:14px; text-align:center; color: var(--muted);">
+            <strong>Create a Page</strong> for a celebrity, brand or business.
+          </p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="wrap" aria-label="Footer languages and links">
+      <div style="display:flex; flex-wrap:wrap; gap:8px;">
+        <span>English (UK)</span>
+        <span>हिन्दी</span>
+        <span>বাংলা</span>
+        <span>اردو</span>
+        <span>தமிழ்</span>
+        <span>తెలుగు</span>
+        <span>മലയാളം</span>
+        <span>ಕನ್ನಡ</span>
+        <span>मराठी</span>
+        <span>ગુજરાતી</span>
+      </div>
+      <div class="divider" style="margin:12px 0"></div>
+      <div style="display:flex; flex-wrap:wrap; gap:12px;">
+        <span>Sign Up</span>
+        <span>Log In</span>
+        <span>Messenger</span>
+        <span>Help</span>
+        <span>Privacy</span>
+        <span>Cookies</span>
+        <span>Terms</span>
+        <span>Settings</span>
+      </div>
+      <p style="margin-top:12px;">© 2025 Demo UI. Not affiliated with any brand.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #1877f2;
+      --brand-dark: #166fe5;
+      --bg: #f0f2f5;
+      --card: #fff;
+      --muted: #606770;
+      --text: #1c1e21;
+      --border: #dddfe2;
+      --success: #42b72a;
+      --focus: 2px solid #1877f2;
+      --radius: 8px;
+      --shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+      ;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .main-container {
+      padding-top: 132px;
+      height: 100vh;
+      display: flex;
+      /* flex-wrap: wrap; */
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .heads {
+      display: flex;
+      justify-content: end;
+    }
+
+    .head {
+      width: 490px;
+      margin-top: 55px;
+    }
+
+
+    .brand {
+      font-size: clamp(36px, 6vw, 62px);
+      font-weight: 700;
+      color: var(--brand);
+      margin: 0 0 2px;
+    }
+
+    .tagline {
+      font-size: clamp(18px, 2.5vw, 28px);
+      color: var(--text);
+      margin: 0;
+      line-height: 1.2;
+      font-weight: 400;
+    }
+
+    .input-con {
+      width: 396px;
+      margin-left: 80px;
+    }
+
+    .form {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 15px 15px 28px;
+      border: 1px solid rgba(0, 0, 0, .04);
+
+      display: grid;
+      gap: 12px;
+    }
+
+    .input {
+      width: 100%;
+      appearance: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px 12px;
+      font-size: 16px;
+      background: #fff;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .input:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 1px rgba(24, 119, 242, .15);
+    }
+
+    .btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 18px;
+      transition: filter .15s ease;
+    }
+
+    .btn.primary {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn.primary:hover {
+      filter: brightness(.90);
+    }
+
+    .btn.primary:active {
+      filter: brightness(.95);
+    }
+
+    .links {
+      text-align: center;
+    }
+
+    .links a {
+      color: var(--brand);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 12px 0;
+    }
+
+    .btn-create {
+      background: var(--success);
+      color: #fff;
+      width: max-content;
+      margin: 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .btn-create:hover {
+      filter: brightness(.92);
+    }
+
+    .new-page {
+      font-size: 14px;
+      color: var(--text);
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .new-page a {
+      text-align: left;
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 12px;
+      padding: 24px 0 40px;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+    }
+
+    span{
+      margin-left: 3px;
+      margin-right: 3px;
+      cursor: pointer;
+    }
+
+    .go-signup{
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="main-container">
+      <div class="container heads">
+        <div class="head">
+          <h1 class="brand" aria-label="Social login demo brand">facebook</h1>
+          <p class="tagline">
+            Facebook helps you connect and share with the people in your life.
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="input-con">
+          <form class="form">
+            <input class="input" type="email" placeholder="Email address or phone number" />
+            <input class="input" type="password" placeholder="Password" />
+            <button class="btn primary" type="button">Log in</button>
+            <div class="links">
+              <a href="#">Forgotten password?</a>
+            </div>
+            <div class="divider" role="separator"></div>
+            <a href="./facbook-signup.html" class="go-signup">
+              <button class="btn btn-create" type="button" >
+              Create new account
+            </button>
+            </a>
+          </form>
+          <p class="new-page">
+            <a href="#">Create a Page</a> for a celebrity, brand or business.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="last-container">
+    <div class="in-con">
+      <div>
+        <span>English (UK)</span>
+        <span>हिन्दी</span>
+        <span>বাংলা</span>
+        <span>اردو</span>
+        <span>தமிழ்</span>
+        <span>తెలుగు</span>
+        <span>മലയാളം</span>
+        <span>ಕನ್ನಡ</span>
+        <span>मराठी</span>
+        <span>ગુજરાતી</span>
+      </div>
+      <div class="divider" style="margin:12px 0"></div>
+      <div>
+        <span>Sign Up</span>
+        <span>Log In</span>
+        <span>Messenger</span>
+        <span>Help</span>
+        <span>Privacy</span>
+        <span>Cookies</span>
+        <span>Terms</span>
+        <span>Settings</span>
+      </div>
+      <div>
+        <p>Meta © 2025</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
