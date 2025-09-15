@@ -4,3 +4,13 @@ if(age > 19){
 }else{
     console.log("Your are !eligible to vote");
 }
+
+
+// Example 2
+
+let fruit = "Banana";
+switch(fruit){
+    case "Apple" : console.log("Apple"); break;
+    case "Mango" : console.log("Mango"); break;
+    case "Banana" : console.log("Banana"); break;
+}
